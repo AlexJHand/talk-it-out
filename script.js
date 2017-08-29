@@ -35,3 +35,74 @@ is more than one character in the string. Return `val` and set `majorKey` to the
 
 15. Your answer should be a string value that equals 7. Is that what you got?
 */
+
+// Step 1
+var majorKey = 42;
+
+// Step 2
+if (majorKey >= 53) {
+    majorKey += 42;
+} else {
+    majorKey -= 13;
+};
+
+majorKey += "11";
+console.log("Step 3 -> " + majorKey);
+
+var keyChars = [];
+
+for (var i = 0; i < majorKey.length; i++) {
+    keyChars[i] = majorKey.charAt(i);
+};
+console.log("Step 4 -> " + keyChars);
+
+keyChars.shift();
+keyChars.pop();
+
+console.log("Step 5 -> " + keyChars);
+
+var x = "";
+
+for (var j = keyChars.length; j > 0; j--) {
+    x += keyChars[(j - 1)];
+};
+
+console.log("Step 6 -> " + x);
+
+majorKey = parseInt(majorKey);
+x = parseInt(x);
+
+console.log("Step 7 -> " + majorKey, x);
+
+majorKey += x;
+
+console.log("Step 8 -> " + majorKey);
+
+if (majorKey < 60) {
+    majorKey = 14;
+} else if (majorKey == 2930) {
+    majorKey = 27;
+} else {
+    majorKey = 2;
+};
+
+console.log("Step 9 --> ", majorKey);
+
+var k = 10;
+while (k > 0) {
+    majorKey++;
+    k--;
+};
+
+console.log("Step 10 -> " + majorKey);
+
+function ourFunction(val) {
+    val = val.toString();
+    if (val.length > 1) {
+        val = val.slice(1, val.length);
+    }
+    return val;
+};
+
+majorKey = ourFunction(majorKey);
+console.log("Final Step -> " + majorKey);
